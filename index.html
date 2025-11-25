@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform Selection</title>
+    <!-- Load Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind for custom theme and smooth transitions -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        // Primary theme color
+                        'primary-gold': '#FFC000', // Bright, energetic yellow
+                        // Secondary theme color for distinction
+                        'secondary-blue': '#3B82F6', // A clear, contrasting blue
+                        // Dark background color
+                        'accent-dark': '#1F2937',  // Dark gray/near black for contrast
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for the smooth hover transition */
+        .card-link {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: scale(1);
+        }
+        .card-link:hover {
+            transform: scale(1.02);
+            /* Ensure the shadow is visible on the dark background */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+    <!-- Load Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<!-- UPDATED: Changed body background to dark and text to light gray -->
+<body class="bg-accent-dark font-sans min-h-screen flex items-center justify-center p-4">
+
+    <div class="max-w-4xl w-full">
+        <!-- Main Heading -->
+        <header class="text-center mb-10">
+            <!-- UPDATED: Changed title color to primary-gold for maximum contrast -->
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-primary-gold mb-3">Welcome to the Platform</h1>
+            <!-- UPDATED: Changed supporting text color to a light shade -->
+            <p class="text-xl text-gray-300">Please select your primary role to continue.</p>
+        </header>
+
+        <!-- Cards Container: Stacked on mobile, side-by-side on desktop -->
+        <div class="flex flex-col md:flex-row gap-8 justify-center">
+
+            <!-- Card 1: Seller's Site - Primary Theme (Gold) -->
+            <a href="https://aracreates.github.io/digistore-partner/" class="card-link block w-full md:w-1/2 p-6 bg-gray-800 border border-gray-700 rounded-xl shadow-lg hover:shadow-2xl hover:border-primary-gold group">
+                <div class="flex flex-col items-start">
+                    <!-- Icon: Primary Gold -->
+                    <svg class="w-10 h-10 mb-4 text-primary-gold group-hover:text-primary-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-1.07-8.487-3.094l-2.43 2.589A2.992 2.992 0 002.5 17h19a2.992 2.992 0 002.417-2.156l-2.43-2.589zM12 12V3"></path>
+                    </svg>
+                    <h2 class="text-2xl font-bold text-white mb-2 group-hover:text-primary-gold">
+                        Seller's Site
+                    </h2>
+                    <p class="text-gray-400 mb-4">
+                        Manage inventory, track sales, analyze performance, and connect with your customers. This is your business hub.
+                    </p>
+                    <!-- Link Text: Primary Gold -->
+                    <span class="text-primary-gold font-semibold group-hover:underline flex items-center">
+                        Go to Dashboard
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Card 2: Customer's Site - Secondary Theme (Blue) -->
+            <a href="https://aracreates.github.io/Digistore/" class="card-link block w-full md:w-1/2 p-6 bg-gray-800 border border-gray-700 rounded-xl shadow-lg hover:shadow-2xl hover:border-secondary-blue group">
+                <div class="flex flex-col items-start">
+                    <!-- Icon: Secondary Blue -->
+                    <svg class="w-10 h-10 mb-4 text-secondary-blue group-hover:text-secondary-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                    </svg>
+                    <h2 class="text-2xl font-bold text-white mb-2 group-hover:text-secondary-blue">
+                        Customer's Site
+                    </h2>
+                    <p class="text-gray-400 mb-4">
+                        Explore products, manage orders, and view your purchase history. Start shopping now!
+                    </p>
+                    <!-- Link Text: Secondary Blue -->
+                    <span class="text-secondary-blue font-semibold group-hover:underline flex items-center">
+                        Start Browsing
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </span>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+</body>
+</html>
